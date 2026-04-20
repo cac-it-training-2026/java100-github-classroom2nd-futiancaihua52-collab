@@ -21,6 +21,39 @@
 
 package lesson01.challenge06;
 
-public class Patisserie {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-}
+public class Patisserie {
+	public static void main(String[] args) throws IOException {
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	System.out.println("本日のおすすめ商品です");
+	
+	int citronStock  = 30;
+	int chocolatStock = 30;
+	int pistacheStock = 30;
+	
+	System.out.println("\nそれぞれ何個ずつ買いますか？（最大30個まで）\n");
+	System.out.print("シトロン      >");
+	String citronBuyCountStr = br.readLine();
+	int citronBuyCount = Integer.parseInt(citronBuyCountStr);
+
+	System.out.print("ショコラ      >");
+	String chocolatBuyCountStr = br.readLine();
+	int chocolatBuyCount = Integer.parseInt(chocolatBuyCountStr);
+	
+	System.out.print("ピスターシュ  >");
+	String pistacheBuyCountStr = br.readLine();
+	int pistacheBuyCount = Integer.parseInt(pistacheBuyCountStr);
+
+	citronStock = citronStock - citronBuyCount;
+	chocolatStock = chocolatStock - chocolatBuyCount;
+	pistacheStock = pistacheStock - pistacheBuyCount;
+
+	System.out.println("\n本日のおすすめ商品です。\n");
+	System.out.println("シトロン      \\250 ・・・ 残り" + citronStock +"個");
+	System.out.println("ショコラ      \\280 ・・・ 残り" + chocolatStock +"個");
+	System.out.println("ピスターシュ  \\320 ・・・ 残り" + pistacheStock +"個");
+	}
+	}

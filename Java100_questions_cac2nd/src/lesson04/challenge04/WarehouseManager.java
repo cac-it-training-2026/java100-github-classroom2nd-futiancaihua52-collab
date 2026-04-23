@@ -42,7 +42,12 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-
+		int[]ABArray= {1,2,3,4,5};
+		
+for(int i=0; i<ABArray.length; i++) {
+	ABArray[i]=(int) (Math.random() * 10) % 5 + 1;
+}
+	
 		//ここに配列の宣言および値の代入処理を記述する（for文）
 
 
@@ -53,7 +58,12 @@ public class WarehouseManager {
 		System.out.println("はい、");
 
 		boolean hitFlag = false;
-
+		for(int i=0; i<ABArray.length; i++) {
+			if(ABArray[i]==5) {
+			hitFlag=true;
+			System.out.println((i+1)+"袋目");
+			}
+		}
 
 		//ここに要素の確認および何袋目かの出力処理を記述する
 

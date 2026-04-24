@@ -41,8 +41,22 @@ package lesson05.challenge04;
 //メソッド名：randomWater(引数なし、戻り値void、waterに1～9の乱数を入れるメソッド)
 //メソッドpumpWaterを改修し、randomWater()を呼び出し、
 //「水を【※フィールドwaterの値】リットル出します」に出力を変更する
+class Robot {
+    int energy;
+    int water;
+    String name;
+    
+    void pumpwater(){
+    randomWater();
+    System.out.println("水を"+ water +"リットルだします");   
+	}
+    
+	void randomWater(){
+	water =(int) (Math.random() * 10) % 9+1;
+	}
+}
 
-public class RobotMaker {
+	public class RobotMaker {
 
     public static void main(String[] args) {
 
@@ -62,6 +76,8 @@ public class RobotMaker {
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //pumpWaterを実行する。
+        Robot robot1=new Robot();
+       robot1.pumpwater();
 
         System.out.println("G博士：");
         System.out.println("......確かに出来とる。\n");

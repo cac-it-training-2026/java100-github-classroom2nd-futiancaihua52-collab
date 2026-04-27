@@ -59,6 +59,50 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+class Robot {
+    int energy;
+    int water;
+    String name;
+
+    void pumpWater() {
+        System.out.println("水を" + water + "リットル出します。\n");
+    }
+
+    void randomWater() {
+        water = (int) (Math.random() * 10) % 9 + 1;
+    }
+
+    void setWater(int water) {
+        this.water = water;
+    }
+
+    void makeOmelet(int eggNum, int butterNum) {
+        int bestOmeletNum1 = eggNum / 2;
+        int bestOmeletNum2 = butterNum / 5;
+
+        if (bestOmeletNum1 > bestOmeletNum2) {
+            System.out.println("\n" + bestOmeletNum2 + "人分のオムレツを作成しました。\n");
+        } else {
+            System.out.println("\n" + bestOmeletNum1 + "人分のオムレツを作成しました。\n");
+        }
+    }
+       int getWater() {
+    	   return water;
+       }
+       static String menu = null;
+       String makeEggDishes(int flourNum, int sugarNum, int eggNum, int butterNum) {
+    	   if ((flourNum>170)&&(sugarNum>50)&&(eggNum>1)&&(butterNum>80)){
+    		   menu = "クッキー"; 
+    	   }else if ((eggNum >1) && (butterNum >80)) {
+               menu = "オムレツ";
+    	   }else if(eggNum >= -1) {
+    		   menu = "ゆで卵";
+    	   }else {
+    		   menu = null;
+    	   }
+    	   return menu;
+   }
+
 //ここに問題7で作成したクラスに次の条件を足したクラスを作成してください。
 //メソッド名：makeEggDishes(引数int flourNum, int sugarNum, int eggNum, int butterNum、
 //戻り値String、作成できるメニューを戻り値として返す。また、作成できるメニューが無い場合はnull値を返す)
@@ -103,6 +147,17 @@ public class RobotMaker {
         System.out.print("\nバターの量を入力してください（グラム）＞");
         String butterNumStr = br.readLine();
         int butterNum = Integer.parseInt(butterNumStr);
+        
+        Robot robot = new Robot();
+        robot.makeEggDishes(flourNum, sugarNum, eggNum, butterNum);
+        if(menu != null) {
+        System.out.println(menu+"ができました");
+        } else {
+            System.out.println("\n何も作れません。");
+        }
+    }
+
+}
 
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
@@ -110,4 +165,3 @@ public class RobotMaker {
         //標準出力でメニューを表示する。
     }
 
-}

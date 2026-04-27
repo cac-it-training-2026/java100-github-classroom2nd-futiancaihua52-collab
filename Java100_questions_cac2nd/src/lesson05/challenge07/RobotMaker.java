@@ -30,7 +30,38 @@ package lesson05.challenge07;
 //ここに問題6で作成したクラスに次の条件を足したクラスを作成してください。
 //メソッド名：getWater(引数なし、戻り値int、
 //現在の水量(フィールドwaterの値)を戻り値として返す)
+class Robot {
+    int energy;
+    int water;
+    String name;
 
+    void pumpWater() {
+        System.out.println("水を" + water + "リットル出します。\n");
+    }
+
+    void randomWater() {
+        water = (int) (Math.random() * 10) % 9 + 1;
+    }
+
+    void setWater(int water) {
+        this.water = water;
+    }
+
+    void makeOmelet(int eggNum, int butterNum) {
+        int bestOmeletNum1 = eggNum / 2;
+        int bestOmeletNum2 = butterNum / 5;
+
+        if (bestOmeletNum1 > bestOmeletNum2) {
+            System.out.println("\n" + bestOmeletNum2 + "人分のオムレツを作成しました。\n");
+        } else {
+            System.out.println("\n" + bestOmeletNum1 + "人分のオムレツを作成しました。\n");
+        }
+    }
+       int getWater() {
+    	   return water;
+       }
+    }
+    
 public class RobotMaker {
 
     public static void main(String[] args) {
@@ -44,6 +75,10 @@ public class RobotMaker {
 
         int water = 0;
 
+        Robot robot = new Robot();
+        robot.randomWater();
+        robot.getWater();
+        		
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //randomWaterを実行する。

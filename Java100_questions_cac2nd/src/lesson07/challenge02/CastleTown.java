@@ -35,6 +35,11 @@ class Samurai {
 
 
 //ここにRoninクラスを記述
+class Ronin extends Samurai{
+	void covered() {
+		System.out.println("傘張りするよ～");
+	}
+}
 
 
 public class CastleTown {
@@ -53,7 +58,9 @@ public class CastleTown {
 
 
         //ここに必要な処理を記述
-
+        Ronin ronin = new Ronin();
+        ronin.fight();
+        ronin.covered();
 
     }
 

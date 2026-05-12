@@ -32,7 +32,6 @@
  */
 
 package lesson07.challenge03;
-
 class Samurai {
 
     void fight() {
@@ -41,12 +40,19 @@ class Samurai {
 
 }
 
+class Retainer extends Samurai {
 
-//ここに問題1で作成したRetainerクラスを記述
+    void getPaid(){
+        System.out.println("給料をもらうよ～。");
+    }
+}
 
+class Magistrate extends Retainer {
 
-//ここにMagistrateクラスを記述
-
+    void judge(){
+        System.out.println("判決を下すよ～。");
+    }
+}
 
 public class CastleTown {
 
@@ -62,17 +68,17 @@ public class CastleTown {
 
         System.out.println("藩士1：");
 
-
-        //ここに必要な処理を記述
-
+        Retainer retainer1 = new Retainer();
+        retainer1.fight();
+        retainer1.getPaid();
 
         System.out.println("\n奉行はそれに加えて判決も下します。\n");
 
         System.out.println("奉行1：");
 
-
-        //ここに必要な処理を記述
-
-
+        Magistrate magistrate1 = new Magistrate();
+        magistrate1.fight();
+        magistrate1.getPaid();
+        magistrate1.judge();
     }
 }

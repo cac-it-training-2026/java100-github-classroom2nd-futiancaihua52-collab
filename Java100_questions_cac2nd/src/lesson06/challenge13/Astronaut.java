@@ -43,10 +43,27 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+class Spaceship {
+    private double fuel;
 
-//ここにSpaceshipクラスを記述する
+    public double getFuel() {
+        return fuel;
+    }
 
+    public void setFuel(double fuel) {
+        this.fuel = fuel;
+    }
 
+    public boolean checkFuel(double fuelNum) {
+        boolean isCheck = false;
+        double fuel = Math.floor(fuelNum);
+        if(fuel >= 12){
+            isCheck = true;
+        }
+        return isCheck;
+    }
+
+}
 public class Astronaut {
 
     public static void main(String[] args) throws IOException {
@@ -62,12 +79,11 @@ public class Astronaut {
 
 
         //ここに適切な処理を記述する
-
-
+        Spaceship spaceship = new Spaceship();
         boolean isCheck = false;
 
-
         //ここに適切な処理を記述する
+        isCheck = spaceship.checkFuel(fuelNum);
 
 
         System.out.println("\n宇宙飛行士：");

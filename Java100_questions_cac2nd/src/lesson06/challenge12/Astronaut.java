@@ -1,4 +1,4 @@
-/**
+ /**
  * 第6章 宇宙飛行士のお仕事
  *
  * 問題12 StringBufferクラス（replace）
@@ -32,9 +32,69 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+class Omegalian {
 
-//ここにOmegalianクラスを記述する
+    private String item;
 
+    public String getItem() {
+        return item;
+    }
+
+
+	    public void setItem(String item) {
+	        int lastIndex = item.length() - 1;
+	        char lastch = item.charAt(lastIndex);
+	        String changeStr = changeLastChar(lastch);
+
+	        if(changeStr != null) {
+	            StringBuffer sb = new StringBuffer(item);
+	            sb.replace(lastIndex, lastIndex+1, changeStr);
+	            this.item = new String(sb);
+	        } else {
+	            this.item = item;
+	        }
+	    }
+
+	    private String changeLastChar(char ch) {
+	        String changeStr = null;
+	        switch (ch) {
+	        case '0':
+	            changeStr = "zero";
+	            break;
+	        case '1':
+	            changeStr = "one";
+	            break;
+	        case '2':
+	            changeStr = "two";
+	            break;
+	        case '3':
+	            changeStr = "three";
+	            break;
+	        case '4':
+	            changeStr = "four";
+	            break;
+	        case '5':
+	            changeStr = "five";
+	            break;
+	        case '6':
+	            changeStr = "six";
+	            break;
+	        case '7':
+	            changeStr = "seven";
+	            break;
+	        case '8':
+	            changeStr = "eight";
+	            break;
+	        case '9':
+	            changeStr = "nine";
+	            break;
+	        default:
+	            break;
+	        }
+	        return changeStr;
+	    }
+
+	}
 
 public class Astronaut {
 
@@ -45,14 +105,14 @@ public class Astronaut {
         String present = br.readLine();
 
 
-        //ここに適切な処理を記述する
+        Omegalian omegalian = new Omegalian();
+        omegalian.setItem(present);
 
 
         String item = null;
+        item = omegalian.getItem();
 
-
-        //ここに適切な処理を記述する
-
+       
 
         System.out.println("\nΩ星人：");
         System.out.println("えっ！" + item + "をくれるオメガか！");

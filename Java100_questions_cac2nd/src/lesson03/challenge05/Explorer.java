@@ -58,8 +58,7 @@ public class Explorer {
                 int totalLength = 0;
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-                //ここに do{ を記述する。
-
+                do {
                         System.out.print("何メートルのロープを投げますか？（5～8）＞");
                         String lengthStr = br.readLine();
                         int length = Integer.parseInt(lengthStr);
@@ -72,7 +71,7 @@ public class Explorer {
                                 System.out.println("ロープの長さを間違ってるよ\n");
                         }
 
-                ///ここにwhile文を記述する。
+                }while(fullHeight>totalLength);
 
                 System.out.println("登り切ったよ！");
 

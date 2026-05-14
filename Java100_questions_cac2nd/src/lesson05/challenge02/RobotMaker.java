@@ -41,6 +41,11 @@
 
 package lesson05.challenge02;
 
+class Robot{
+	int energy;
+	String name;
+}
+
 //ここに問題1で作成したクラスに次の条件を足したクラスを作成してください。
 //フィールド名：name(String型)
 
@@ -64,11 +69,24 @@ public class RobotMaker {
         //ここにRobotクラスのインスタンスを３つ作り、
         //（インスタンス名はrobot1、robot2、robot3）
         //それぞれ名前を代入する処理を記述する。
-
+        Robot robot1=new Robot();
+        robot1.energy=10;
+        robot1.name="RF1";
+        
+        Robot robot2=new Robot();
+        robot2.energy=10;
+        robot2.name="RF2";
+        
+        Robot robot3=new Robot();
+        robot2.energy=10;
+        robot2.name="RF2";
+        
+        
         System.out.println("G博士：");
         System.out.println("よし、では確認にため2番目のロボットの中を覗いてみよう。\n");
 
         //ここに2番目のインスタンスの名前を表示する処理を記述する
+        System.out.println("2番目のロボットの名前は"+robot2.name+"です");
 
         System.out.println("G博士：");
         System.out.println("OKじゃ。\n");

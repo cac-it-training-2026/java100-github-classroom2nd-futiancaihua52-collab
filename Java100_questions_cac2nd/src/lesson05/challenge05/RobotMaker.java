@@ -33,6 +33,27 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+class Robot{
+	int energy;
+    int water;
+    String name;
+    
+    
+    void pumpwater(){
+    randomWater();
+    System.out.println("水を"+ water +"リットルだします");   
+	}
+    
+	void randomWater(){
+	water =(int) (Math.random() * 10) % 9+1;
+	}
+    
+    void setWater (int water){
+    this.water=water;
+    }
+}
+
+
 //ここに問題4で作成したクラスに次の条件を足したクラスを作成してください。
 //メソッド名：setWater(引数int water、戻り値void、フィールドwaterに引数の値を代入する)
 //メソッドpumpWaterを改修し、randomWater()を削除
@@ -56,6 +77,10 @@ public class RobotMaker {
         String waterStr = br.readLine();
         int water = Integer.parseInt(waterStr);
 
+        Robot robot1 = new Robot();
+        robot1.setWater(water);
+        robot1.pumpwater();
+        		
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //setWaterを実行する。

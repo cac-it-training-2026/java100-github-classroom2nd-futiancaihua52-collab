@@ -41,6 +41,39 @@ import java.io.InputStreamReader;
 
 
 //ここにGammalianクラスを記述する
+class Gammalian {
+
+    private String item;
+    private boolean isGood;
+
+    public String getItem() {
+        return item;
+    }
+
+    public void setItem(String item) {
+        boolean isHit = false;
+        for (int i = 0; i < 10; i++) {
+            if (item.indexOf(Integer.toString(i)) != -1) {
+                isHit = true;
+                break;
+            }
+        }
+        if (isHit) {
+            isGood = true;
+        } else {
+            isGood = false;
+        }
+        this.item = item;
+    }
+
+    public boolean isGood() {
+        return isGood;
+    }
+
+    public void setGood(boolean isGood) {
+        this.isGood = isGood;
+    }
+}
 
 
 public class Astronaut {
@@ -53,12 +86,13 @@ public class Astronaut {
 
 
         //ここに適切な処理を記述する
+        Gammalian gammalian = new Gammalian();
+        gammalian.setItem(present);
 
 
         boolean isGood = false;
+        isGood = gammalian.isGood();
 
-
-        //ここに適切な処理を記述する
 
 
         System.out.println("\nγ星人：");

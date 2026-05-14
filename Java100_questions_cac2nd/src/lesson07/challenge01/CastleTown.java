@@ -32,9 +32,12 @@ class Samurai {
     }
 
 }
+////Retainerクラス
+class Retainer extends Samurai {
 
-
-//ここにRetainerクラスを記述
+	void getPaid() {
+		System.out.println("給料をもらうよ～");
+}
 
 
 public class CastleTown {
@@ -51,10 +54,16 @@ public class CastleTown {
 
         System.out.println("藩士1：");
 
-
         //ここに必要な処理を記述
+        Retainer retainer = new Retainer();
+        retainer.fight();
+        retainer.getPaid();
+
+      
 
 
     }
 
+
+}
 }

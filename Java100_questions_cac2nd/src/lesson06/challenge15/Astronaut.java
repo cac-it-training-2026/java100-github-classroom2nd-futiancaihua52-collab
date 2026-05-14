@@ -30,18 +30,30 @@
  *
  */
 
+
 package lesson06.challenge15;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+class Spaceship {
+    private int damage;
 
-//ここにSpaceshipクラスを記述する
+    public int getDamage() {
+        return damage;
+    }
 
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+}
 
-//ここにDockクラスを記述する
-
+class Dock {
+    public void repairShip(Spaceship ship){
+        ship.setDamage(0);
+    }
+}
 
 public class Astronaut {
 
@@ -58,16 +70,16 @@ public class Astronaut {
 
         System.out.println("\n現在のダメージ：" + damage);
 
+        Spaceship spaceship = new Spaceship();
+        spaceship.setDamage(damage);
 
-        //ここに適切な処理を記述する
-
+        Dock dock = new Dock();
+        dock.repairShip(spaceship);
 
         System.out.println("\n宇宙飛行士：");
         System.out.println("よし！ドックから戻ってきたぞ！\n");
 
-
-        //ここに適切な処理を記述する
-
+        damage = spaceship.getDamage();
 
         System.out.println("現在のダメージ：" + damage);
     }

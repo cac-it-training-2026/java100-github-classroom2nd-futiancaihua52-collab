@@ -1,8 +1,8 @@
-package lesson09.challenge01.Nurserry.logic;
+package lesson08.challenge02.Nursery;
 
 public class NurserySchoolChild {
-
-    private String name;
+	
+	private String name;
 
     public NurserySchoolChild(String name) {
         this.name = name;

@@ -36,8 +36,12 @@ class Spaceship {
         this.fuel = 100;
     }
 
-    //ここに適切な処理を記述する。
+    public Spaceship(int air, int fuel) {
+        this.air = air;
+        this.fuel = fuel;
+    }
 
+    
     public int getFuel() {
         return fuel;
     }
@@ -73,7 +77,6 @@ public class Astronaut {
         String fuelStr = br.readLine();
         int fuel = Integer.parseInt(fuelStr);
 
-        //ここに適切な処理を記述する。
-
+        
     }
 }

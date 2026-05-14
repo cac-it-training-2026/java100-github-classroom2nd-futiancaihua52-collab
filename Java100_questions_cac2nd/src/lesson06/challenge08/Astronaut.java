@@ -50,8 +50,10 @@ class Spaceship {
     public void setAir(int air) {
         this.air = air;
     }
-
-    //ここに適切な処理を記述する。
+    public static int count() {
+    	return number;
+    }
+    
 
 }
 
@@ -62,7 +64,9 @@ public class Astronaut {
         Spaceship spaceship1 = new Spaceship();
         Spaceship spaceship2 = new Spaceship();
         Spaceship spaceship3 = new Spaceship();
+        
+        System.out.println("宇宙船は全部で"+Spaceship.count()+"台あります");
 
-        //ここに適切な処理を記述する。
+        
     }
 }

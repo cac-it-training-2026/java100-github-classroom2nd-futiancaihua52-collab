@@ -44,9 +44,27 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+class Spaceship {
+    private double fuel;
 
-//ここにSpaceshipクラスを記述する
+    public double getFuel() {
+        return fuel;
+    }
 
+    public void setFuel(double fuel) {
+        this.fuel = fuel;
+    }
+
+    public boolean compareFuel(double fuelNum, double lightYear) {
+        boolean isCheck = false;
+        double answer = Math.max(fuelNum,lightYear);
+        if(answer == fuelNum){
+            isCheck = true;
+        }
+        return isCheck;
+    }
+
+}
 
 public class Astronaut {
 
@@ -65,15 +83,9 @@ public class Astronaut {
         String fuelStr = br.readLine();
         double fuelNum = Double.parseDouble(fuelStr);
 
-
-        //ここに適切な処理を記述する
-
-
+        Spaceship spaceship = new Spaceship();
         boolean isCheck = false;
-
-
-        //ここに適切な処理を記述する
-
+        isCheck = spaceship.compareFuel(fuelNum,lightYear);
 
         System.out.println("\n宇宙飛行士：");
         if(isCheck){
